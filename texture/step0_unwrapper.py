@@ -269,9 +269,9 @@ def main(_):
         if FLAGS.is_mult_view:
             assert info["proj_xyz"].shape[0] >= 3  # front, left, right
             if FLAGS.is_orig_img:
-                front_img = info["ori_img"][0][np.newaxis, ...]
-                left_img = info["ori_img"][1][np.newaxis, ...]
-                right_img = info["ori_img"][2][np.newaxis, ...]
+                front_img = info["ori_img"][0, 0][np.newaxis, ...]
+                left_img = info["ori_img"][0, 1][np.newaxis, ...]
+                right_img = info["ori_img"][0, 2][np.newaxis, ...]
             else:
                 front_img = info["diffuse"][0][np.newaxis, ...]
                 left_img = info["diffuse"][1][np.newaxis, ...]
